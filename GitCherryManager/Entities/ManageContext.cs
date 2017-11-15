@@ -5,15 +5,18 @@ namespace GitCherryManager.Entities
 {
     public class ManageContext : DbContext
     {
-        public ManageContext() : base("ManageContext")
+        public ManageContext() : base("Manage")
         {
+            Database.SetInitializer(new DropCreateDatabaseAlways<ManageContext>());
 
         }
-        public DbSet<CherryPick> CherryPicks { get; set; }
-        public DbSet<Commit> Commits { get; set; }
         public DbSet<Repository> Repositories { get; set; }
-    }
-    public class ManageContextInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ManageContext>
-    {
+        public DbSet<CodeShare> CodeShares { get; set; }
+        public DbSet<Commit> Commits { get; set; }
+        public DbSet<CherryPick> CherryPicks { get; set; }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            
+        }
     }
 }

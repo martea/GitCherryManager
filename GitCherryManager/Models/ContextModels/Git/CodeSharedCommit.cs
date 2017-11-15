@@ -5,12 +5,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GitCherryManager.Models.ContextModels.Git
 {
-    public class Repository
+    public class CodeShare
     {
         [Key]
-        public int RepositoryId { get; set; }
-        public string Url { get; set; }
-        public virtual ICollection<CodeShare> CodeShares { get; set; }
+        public int CodeShareId { get; set; }
+        public virtual Repository Repository { get; set; }
+        public virtual ICollection<Commit> Commits{ get; set; }
     }
-
 }

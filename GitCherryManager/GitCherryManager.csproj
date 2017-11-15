@@ -156,16 +156,15 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RepositoriesController.cs" />
     <Compile Include="Entities\ManageContext.cs" />
+    <Compile Include="Entities\ManageContextInitializer.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201711132237037_init.cs" />
-    <Compile Include="Migrations\201711132237037_init.Designer.cs">
-      <DependentUpon>201711132237037_init.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContextModels\Git\CherryPick.cs" />
+    <Compile Include="Models\ContextModels\Git\CodeSharedCommit.cs" />
     <Compile Include="Models\ContextModels\Git\Commit.cs" />
     <Compile Include="Models\Enumerables\MergeStatusType.cs" />
     <Compile Include="Models\Enumerables\ProccessStatusType.cs" />
@@ -173,10 +172,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\Manage.mdf" />
-    <Content Include="App_Data\Manage_log.ldf">
-      <DependentUpon>Manage.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -218,11 +213,11 @@
     <Content Include="Views\Manage\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201711132237037_init.resx">
-      <DependentUpon>201711132237037_init.cs</DependentUpon>
-    </EmbeddedResource>
+    <Content Include="Views\Repositories\Create.cshtml" />
+    <Content Include="Views\Repositories\Delete.cshtml" />
+    <Content Include="Views\Repositories\Details.cshtml" />
+    <Content Include="Views\Repositories\Edit.cshtml" />
+    <Content Include="Views\Repositories\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -239,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
